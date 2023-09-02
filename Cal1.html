@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .btn {
+        width:40px;
+        height:40px;     
+        
+        
+        }
+    </style>
+    <script>
+        var num = "";
+        var op = "";
+        var n1 = 0;
+        var n2 = 0;
+        var ans = 0;
+        function numclick(b) {
+            num = num + b.value;
+            document.getElementById("num").value = num;
+        }
+        function opclick(b) {
+            op = b.value;
+            n1 = parseInt(document.getElementById("num").value);
+            num = "";
+            
+        }
+        function eqfun() {
+            n2 = parseInt(document.getElementById("num").value);
+            num = "";
+            switch (op) {
+                case "+":
+                    ans = n1 + n2;
+                    break;
+                case "-":
+                    ans = n1 - n2;
+                    break;
+                case "/":
+                    ans = n1 / n2;
+                    break;
+                case "*":
+                    ans = n1 * n2;
+                    break;
+            }
+            document.getElementById("num").value = ans;
+
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+<!-- Basic Calculator in JavaScript-->
+    <table width="200px" align="center">
+        <tr><td colspan="5"><input type="text" size="25" style="text-align:right" readonly id="num" /></td></tr>
+        <tr>
+            <td><input type="button" value="7" id="b7" class="btn" onclick="numclick(this)" /></td>
+            <td><input type="button" value="8" id="b8" class="btn" onclick="numclick(this)" /></td>
+            <td><input type="button" value="9" id="b9" class="btn" onclick="numclick(this)" /></td>
+            <td>&nbsp;</td>
+            <td><input type="button" value="/" id="bdiv" class="btn" onclick="opclick(this)" /></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="4" id="b4" class="btn"  onclick="numclick(this)"/></td>
+            <td><input type="button" value="5" id="b5" class="btn" onclick="numclick(this)" /></td>
+            <td><input type="button" value="6" id="b6" class="btn" onclick="numclick(this)" /></td>
+            <td>&nbsp;</td>
+            <td><input type="button" value="*" id="bmul" class="btn" onclick="opclick(this)" /></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="1" id="b1" class="btn" onclick="numclick(this)" /></td>
+            <td><input type="button" value="2" id="b2" class="btn" onclick="numclick(this)"/></td>
+            <td><input type="button" value="3" id="b3" class="btn" onclick="numclick(this)" /></td>
+            <td>&nbsp;</td>
+            <td><input type="button" value="+" id="badd" class="btn" onclick="opclick(this)" /></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="0" id="b0" class="btn" onclick="numclick(this)" /></td>
+            <td><input type="button" value="00" id="bz" class="btn" onclick="numclick(this)"/></td>
+            <td><input type="button" value="." id="bd" class="btn" onclick="numclick(this)"/></td>
+            <td>&nbsp;</td>
+            <td><input type="button" value="-" id="bminus" class="btn" onclick="opclick(this)" /></td>
+
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><input type="button" value="=" id="beq" class="btn" onclick="eqfun()" /></td>
+
+        </tr>
+    </table>
+
+
+
+</body>
+</html>
